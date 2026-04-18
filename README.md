@@ -34,10 +34,10 @@ SPEECH_PROJECT/
 Project Structure
 The project is divided into four main modeling approaches, each housed in its own directory:
 
-1.model1/: Contains the baseline CNN architecture (basic.py) where feature extraction is done using mfccs.
-2.model2/: Uses 128-band Log-Mel Spectrograms for feature extraction (melspecto.py), optimizing for how human hearing perceives sound frequencies.
-3.model3/: Stacks MFCCs, Mel Spectrograms, and Spectral Contrast into a rich 175-band feature map (combined_feature_extraction.py) for maximum accuracy.
-4.optimised_model/: Uses 40-band MFCCs as input features (best2.py). Includes 8-bit Post-Training Quantization (PTQ) and Grad-CAM visualizations.
+1.model1/: Contains the baseline CNN architecture (m1.py) where feature extraction is done using mfccs.
+2.model2/: Uses 128-band Log-Mel Spectrograms for feature extraction (m2.py), optimizing for how human hearing perceives sound frequencies.
+3.model3/: Stacks MFCCs, Mel Spectrograms, and Spectral Contrast into a rich 175-band feature map (m3.py) for maximum accuracy.
+4.optimised_model/: Uses 40-band MFCCs as input features (om.py). Includes 8-bit Post-Training Quantization (PTQ) and Grad-CAM visualizations.
 
 🚀 How to Run the Models
 Since each model relies on the dataset being in the root directory, you should run the scripts from the root SPEECH_PROJECT directory, or ensure the internal paths in the scripts point to the correct dataset location.
