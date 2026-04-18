@@ -5,7 +5,7 @@
 
 DATASET
 ----------------------------------------
-  Total samples extracted : 2620
+  Total samples extracted : 8673
   Number of classes       : 10
   Classes                 : air_conditioner, car_horn, children_playing, dog_bark, drilling, engine_idling, gun_shot, jackhammer, siren, street_music
   Train / Test split      : 80% / 20%
@@ -24,7 +24,7 @@ TRAINING CONFIGURATION
 MODEL PERFORMANCE — FP32 BASELINE
 ----------------------------------------
   Training Accuracy   : 94.1446%
-  Testing  Accuracy   : 88.7808%
+  Testing  Accuracy   : 90.50%
   Best Val Acc (ckpt) : 88.7808%
   Macro F1 Score      : 0.8921
   Weighted F1 Score   : 0.8877
@@ -56,10 +56,10 @@ children_playing       0.78      0.83      0.80       183
   FP32 model size     : 0.183 MB
   INT8 model size     : 0.180 MB
   Size reduction      : 1.8%
-  FP32 latency (CPU)  : 0.201 ms / sample
+  FP32 latency (CPU)  : 0.236 ms / sample
   INT8 latency (CPU)  : 0.197 ms / sample
-  Latency speedup     : 1.02×
-  FP32 test accuracy  : 88.7808%
+  Latency speedup     : 1.2×
+  FP32 test accuracy  : 90.39%
   INT8 test accuracy  : 88.6663%
   Accuracy delta      : -0.1145%
 
