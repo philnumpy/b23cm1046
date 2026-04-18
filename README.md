@@ -46,25 +46,25 @@ Running the Model-1
 Bash
 cd model1
 python m1.py
-Outputs (Plots, text summaries, and .pt weights) will be saved in the /results_model1/ folder.
+Outputs (Plots, text summaries, and .pt weights) will be saved in the /results1/ folder.
 
 Running the Model-2
 Bash
 cd model2
 python m2.py
-Outputs will be saved in the /results_model2/ folder.
+Outputs will be saved in the /results_melspec/ folder.
 
 Running the  Model-3
 Bash
 cd model3
 python m3.py
-Outputs will be saved in the results_model3/ folder.
+Outputs will be saved in the results_combined_features/ folder.
 
 Running the Optimised Model
 Bash
 cd optimised_model
 python om.py
-Outputs will be saved in the results_optimised/ folder.
+Outputs will be saved in the results/ folder.
 
 
 
