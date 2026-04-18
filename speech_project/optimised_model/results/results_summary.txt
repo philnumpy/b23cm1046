@@ -1,0 +1,93 @@
+========================================================================
+  URBAN SOUND CLASSIFICATION — RESULTS SUMMARY
+  Generated: 2026-04-18  15:42:36
+========================================================================
+
+DATASET
+----------------------------------------
+  Total samples extracted : 2620
+  Number of classes       : 10
+  Classes                 : air_conditioner, car_horn, children_playing, dog_bark, drilling, engine_idling, gun_shot, jackhammer, siren, street_music
+  Train / Test split      : 80% / 20%
+  MFCC coefficients       : 40
+  Max pad length          : 174
+
+TRAINING CONFIGURATION
+----------------------------------------
+  Epochs        : 72
+  Batch size    : 256
+  Learning rate : 0.001
+  Optimiser     : Adam
+  Loss function : CrossEntropyLoss
+  Device        : cuda
+
+MODEL PERFORMANCE — FP32 BASELINE
+----------------------------------------
+  Training Accuracy   : 94.1446%
+  Testing  Accuracy   : 88.7808%
+  Best Val Acc (ckpt) : 88.7808%
+  Macro F1 Score      : 0.8921
+  Weighted F1 Score   : 0.8877
+
+CLASSIFICATION REPORT (FP32)
+----------------------------------------
+                  precision    recall  f1-score   support
+
+ air_conditioner       0.92      0.93      0.92       203
+        car_horn       0.90      0.92      0.91        86
+children_playing       0.78      0.83      0.80       183
+        dog_bark       0.90      0.87      0.88       201
+        drilling       0.93      0.85      0.89       206
+   engine_idling       0.90      0.93      0.92       193
+        gun_shot       0.87      0.99      0.92        72
+      jackhammer       0.96      0.93      0.94       208
+           siren       0.91      0.95      0.93       165
+    street_music       0.82      0.79      0.81       230
+
+        accuracy                           0.89      1747
+       macro avg       0.89      0.90      0.89      1747
+    weighted avg       0.89      0.89      0.89      1747
+
+
+8-BIT POST-TRAINING QUANTIZATION (PTQ)
+----------------------------------------
+  Method              : Dynamic INT8 (torch.quantization.quantize_dynamic)
+  Quantised layers    : nn.Linear (classifier head)
+  FP32 model size     : 0.183 MB
+  INT8 model size     : 0.180 MB
+  Size reduction      : 1.8%
+  FP32 latency (CPU)  : 0.201 ms / sample
+  INT8 latency (CPU)  : 0.197 ms / sample
+  Latency speedup     : 1.02×
+  FP32 test accuracy  : 88.7808%
+  INT8 test accuracy  : 88.6663%
+  Accuracy delta      : -0.1145%
+
+GRAD-CAM EXPLAINABILITY
+----------------------------------------
+  Gradient-weighted Class Activation Mapping (Grad-CAM) was applied
+  to the final convolutional layer (block4[0], 128 filters).
+  Heatmaps were overlaid onto MFCC spectrograms to visualise which
+  time-frequency regions drive each class prediction.
+
+  Audited focus areas per class (expected vs observed): Sirens →
+  repeating spectral sweep; Jackhammer → rhythmic low-frequency
+  bursts; Dog bark → transient mid-frequency onset; Car horn →
+  sustained harmonic cluster. The model correctly attends to
+  rhythmic structural patterns rather than static background noise,
+  supporting social transparency for smart-city automated alerts.
+
+OUTPUT FILES
+----------------------------------------
+  results/plots/class_distribution_pie.png
+  results/plots/class_distribution_bar.png
+  results/plots/mfcc_sample_grid.png
+  results/plots/training_curves.png
+  results/plots/confusion_matrix.png
+  results/plots/per_class_f1.png
+  results/plots/quantization_comparison.png
+  results/plots/gradcam_grid.png
+  saved_models/weights_best_cnn.pt  (FP32 best weights)
+  saved_models/model_int8.pt        (INT8 weights)
+
+========================================================================

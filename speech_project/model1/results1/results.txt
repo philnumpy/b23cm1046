@@ -1,0 +1,32 @@
+Final Training Accuracy : 94.9463%
+Final Testing  Accuracy : 90.4980%
+
+Classification Report:
+                  precision    recall  f1-score   support
+
+ air_conditioner       0.90      0.93      0.91       203
+        car_horn       0.91      0.95      0.93        86
+children_playing       0.79      0.87      0.83       183
+        dog_bark       0.93      0.90      0.92       201
+        drilling       0.93      0.87      0.90       206
+   engine_idling       0.95      0.93      0.94       193
+        gun_shot       0.96      0.94      0.95        72
+      jackhammer       0.92      0.94      0.93       208
+           siren       0.96      0.96      0.96       165
+    street_music       0.85      0.82      0.83       230
+
+        accuracy                           0.90      1747
+       macro avg       0.91      0.91      0.91      1747
+    weighted avg       0.91      0.90      0.91      1747
+
+Confusion Matrix:
+[[188   0   3   0   1   4   0   1   1   5]
+ [  0  82   0   1   0   0   0   2   0   1]
+ [  5   0 160   2   1   3   0   0   0  12]
+ [  2   1   8 181   4   0   1   1   0   3]
+ [  2   2   2   5 180   0   1   7   0   7]
+ [  1   2   3   1   0 180   1   4   0   1]
+ [  0   1   1   0   1   0  68   1   0   0]
+ [  4   1   1   0   5   0   0 195   0   2]
+ [  1   1   0   2   0   0   0   0 158   3]
+ [  6   0  24   2   1   3   0   0   5 189]]
